@@ -26,7 +26,9 @@ pipeline{
         }
       }
       stage('Package Artifacts'){
-        archiveArtifacts artifacts: 'Calculator\\Release\\netcoreapp3.1\\publish\\**', fingerprint: true
+        steps{
+          archiveArtifacts artifacts: 'Calculator\\Release\\netcoreapp3.1\\publish\\**', fingerprint: true
+        }
       }
     }
 }
