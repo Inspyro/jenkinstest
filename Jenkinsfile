@@ -22,12 +22,12 @@ pipeline{
       }
       stage('Publish'){
         steps{
-          bat "dotnet publish Calculator\\Calculator.csproj "
+          bat "dotnet publish Calculator\\Calculator.csproj --configuration Release"
         }
       }
       stage('Package Artifacts'){
         steps{
-          archiveArtifacts artifacts: '**', fingerprint: true
+          archiveArtifacts artifacts: 'Calculator\\Release\\netcoreapp3.1\\publish\\**', fingerprint: true
         }
       }
     }
