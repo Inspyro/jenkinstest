@@ -25,5 +25,8 @@ pipeline{
           bat "dotnet publish Calculator\\Calculator.csproj "
         }
       }
+      stage('Package Artifacts'){
+        archiveArtifacts artifacts: 'Calculator\\Release\\netcoreapp3.1\\publish\\**', fingerprint: true
+      }
     }
 }
