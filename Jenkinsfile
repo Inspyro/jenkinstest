@@ -27,7 +27,6 @@ pipeline{
       }
       stage('Sign'){
         steps{
-          powershell "Install-Module -Name SignPath"
           powershell "Submit-SigningRequest -InputArtifactPath 'Calculator\\bin\\Release\\netcoreapp3.1\\publish\\Calculator.exe' -CIUserToken 'AExbvbkphw9z/77600F+8lkotQVU4uoV6vrQ68CwXp2L' -OrganizationId '365feccb-d076-4498-80c8-4dec671b999e' -ProjectSlug 'Jenkins' -SigningPolicySlug 'TestSigning' -ApiUrl 'https://localhost:44328/'"
         }
       }
