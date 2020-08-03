@@ -7,22 +7,22 @@ pipeline{
     stages{
       stage('Restore packages'){
         steps{
-          bat "dotnet restore Calculator\\Calculator.csproj"
+          sh "dotnet restore Calculator\\Calculator.csproj"
         }
       }
       stage('Clean'){
         steps{
-          bat "dotnet clean Calculator\\Calculator.csproj"
+          sh "dotnet clean Calculator\\Calculator.csproj"
         }
       }
       stage('Build'){
         steps{
-          bat "dotnet build Calculator\\Calculator.csproj --configuration Release"
+          sh "dotnet build Calculator\\Calculator.csproj --configuration Release"
         }
       }
       stage('Publish'){
         steps{
-          bat "dotnet publish Calculator\\Calculator.csproj "
+          sh "dotnet publish Calculator\\Calculator.csproj "
         }
       }
     }
