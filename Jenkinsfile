@@ -11,27 +11,27 @@ pipeline{
     stages{
       stage('Checkout') {
         steps {
-          git url: 'https://github.com/YourAcc/YourRepoName.git/', branch: 'master'
+          git url: 'https://github.com/Inspyro/jenkinstest', branch: 'master'
         }
       }
       stage('Restore packages'){
         steps{
-          bat "dotnet restore YourProjectPath\\Your_Project.csproj"
+          bat "dotnet restore Calculator\\Calculator.csproj"
         }
       }
       stage('Clean'){
         steps{
-          bat "dotnet clean YourProjectPath\\Your_Project.csproj"
+          bat "dotnet clean Calculator\\Calculator.csproj"
         }
       }
       stage('Build'){
         steps{
-          bat "dotnet build YourProjectPath\\Your_Project.csproj --configuration Release"
+          bat "dotnet build Calculator\\Calculator.csproj --configuration Release"
         }
       }
       stage('Publish'){
         steps{
-          bat "dotnet publish YourProjectPath\\Your_Project.csproj "
+          bat "dotnet publish Calculator\\Calculator.csproj "
         }
       }
     }
