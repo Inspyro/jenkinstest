@@ -32,7 +32,7 @@ pipeline{
       }
       stage('Sign'){
         input {
-                id WaitForSign
+                id "WaitForSign"
                 message "Should we sign the project?"
         }
         steps{
