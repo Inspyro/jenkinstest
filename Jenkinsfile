@@ -36,6 +36,9 @@ pipeline{
                 message "Should we sign the project?"
         }
         steps{
+          echo "Build Url: " env.BUILD_URL
+          echo "Build Number: " env.BUILD_NUMBER
+          echo "Job Name: " env.JOB_NAME
           powershell "Submit-SigningRequest -InputArtifactPath 'Calculator\\bin\\Release\\netcoreapp3.1\\publish\\Calculator.exe' -CIUserToken 'AExbvbkphw9z/77600F+8lkotQVU4uoV6vrQ68CwXp2L' -OrganizationId '365feccb-d076-4498-80c8-4dec671b999e' -ProjectKey 'Jenkins' -SigningPolicyKey 'TestSigning' -ApiUrl 'https://localhost:44328/'"
         }
       }
