@@ -32,8 +32,8 @@ pipeline{
       }
       stage('Sign'){
         input {
-                id "WaitForSign"
-                message "Should we sign the project?"
+            id "WaitForSign"
+            message "Should we sign the project?"
         }
         steps{
             echo "Build Url: " + env.BUILD_URL
