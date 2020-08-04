@@ -25,17 +25,17 @@ pipeline{
           bat "dotnet publish Calculator\\Calculator.csproj --configuration Release"
         }
       }
+      stage('Package Artifacts'){
+        steps{
+          archiveArtifacts artifacts: 'Calculator\\bin\\Release\\netcoreapp3.1\\publish\\**', fingerprint: true
+        }
+      }
       stage('Sign'){
         input {
                 message "Should we sign the project?"
         }
         steps{
           powershell "Submit-SigningRequest -InputArtifactPath 'Calculator\\bin\\Release\\netcoreapp3.1\\publish\\Calculator.exe' -CIUserToken 'AExbvbkphw9z/77600F+8lkotQVU4uoV6vrQ68CwXp2L' -OrganizationId '365feccb-d076-4498-80c8-4dec671b999e' -ProjectKey 'Jenkins' -SigningPolicyKey 'TestSigning' -ApiUrl 'https://localhost:44328/'"
-        }
-      }
-      stage('Package Artifacts'){
-        steps{
-          archiveArtifacts artifacts: 'Calculator\\bin\\Release\\netcoreapp3.1\\publish\\**', fingerprint: true
         }
       }
     }
