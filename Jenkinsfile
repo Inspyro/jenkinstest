@@ -30,6 +30,11 @@ pipeline{
           archiveArtifacts artifacts: 'Calculator\\bin\\Release\\netcoreapp3.1\\publish\\**', fingerprint: true
         }
       }
+      stage('SignPath'){
+          steps{
+              signWithSignPath()
+          }
+      }
       stage('Sign'){
         input {
             id "WaitForSign"
