@@ -8,6 +8,7 @@ pipeline{
       stage('Restore packages'){
         steps{
           bat "dotnet restore Calculator\\Calculator.csproj"
+          bat "hostname"
         }
       }
       stage('Clean'){
