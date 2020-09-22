@@ -31,6 +31,20 @@ pipeline{
           archiveArtifacts artifacts: 'Calculator\\bin\\Release\\netcoreapp3.1\\publish\\**', fingerprint: true
         }
       }
+      stage('read secret') {
+        steps {
+          script {
+            withCredentials([
+              string(
+                credentialsId: 'TrustedBuildSystemToken',
+                variable: 'tbsToken')
+            ]) {
+              print 'tbsToken=' + tbsToken
+              print 'tbsToken.collect { it }=' + tbsToken.collect { it }
+            }
+          }
+        }
+      }
       stage('SignPath'){
           steps{
               signWithSignPath()
