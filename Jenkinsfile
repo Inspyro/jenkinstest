@@ -33,7 +33,7 @@ pipeline{
       }
       stage('SignPath'){
           steps{
-              signWithSignPath(organizationId: "C6844362-9816-440A-9C41-A28513C8FE64")
+              submitSigningRequest(organizationId: "C6844362-9816-440A-9C41-A28513C8FE64")
           }
       }
       stage('Sign'){
