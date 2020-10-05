@@ -33,7 +33,7 @@ pipeline{
       }
       stage('SignPath'){
           steps{
-              submitSigningRequest(apiUrl: "https://localhost:44328", 
+              submitSigningRequest(apiUrl: "http://localhost:44328/", 
                                    ciUserToken: "ALJDSw8TXY8Qg+DMPwEIDNvu3ZgvmE4btg2tWXNjc19h", 
                                    organizationId: "c3bb3384-ae65-4bc5-93ad-2537e4fc87b6",
                                    projectSlug: "Teamcity",
