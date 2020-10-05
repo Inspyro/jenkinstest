@@ -33,21 +33,8 @@ pipeline{
       }
       stage('SignPath'){
           steps{
-              submitSigningRequest(organizationId: "C6844362-9816-440A-9C41-A28513C8FE64")
+              submitSigningRequest(apiUrl: "https:localhost:44328", ciUserToken: "ALJDSw8TXY8Qg+DMPwEIDNvu3ZgvmE4btg2tWXNjc19h", organizationId: "c3bb3384-ae65-4bc5-93ad-2537e4fc87b6")
           }
-      }
-      stage('Sign'){
-        input {
-            id "WaitForSign"
-            message "Should we sign the project?"
-        }
-        steps{
-            echo "Build Url: " + env.BUILD_URL
-            echo "Build Number: " + env.BUILD_NUMBER
-            echo "Job Name: " + env.JOB_NAME
-            echo "something"
-            powershell "Submit-SigningRequest -InputArtifactPath 'Calculator\\bin\\Release\\netcoreapp3.1\\publish\\Calculator.exe' -CIUserToken 'AExbvbkphw9z/77600F+8lkotQVU4uoV6vrQ68CwXp2L' -OrganizationId '365feccb-d076-4498-80c8-4dec671b999e' -ProjectKey 'Jenkins' -SigningPolicyKey 'TestSigning' -ApiUrl 'https://localhost:44328/'"
-        }
       }
     }
 }
