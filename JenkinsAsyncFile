@@ -1,3 +1,4 @@
+signingRequestId = ''
 pipeline{
     agent { label 'win' }
     
