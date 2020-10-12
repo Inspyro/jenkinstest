@@ -34,9 +34,9 @@ pipeline{
       stage('SignPath'){
           steps{
               submitSigningRequest(apiUrl: "http://localhost:44328/", 
-                                   ciUserToken: "ALJDSw8TXY8Qg+DMPwEIDNvu3ZgvmE4btg2tWXNjc19h", 
-                                   organizationId: "c3bb3384-ae65-4bc5-93ad-2537e4fc87b6",
-                                   projectSlug: "Teamcity",
+                                   ciUserToken: "AJb2OOqIwTZEUFv6b1me2S6wH1VV2jOpSynz3cQ5RU/r", 
+                                   organizationId: "5278a79c-5e5d-440d-994a-1d7901849ea7",
+                                   projectSlug: "SomeProject",
                                    signingPolicySlug: "TestSigning",
                                    inputArtifactPath: "Calculator\\bin\\Release\\netcoreapp3.1\\publish\\Calculator.exe",
                                    outputArtifactPath: "Calculator.signed.exe",
