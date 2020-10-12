@@ -33,6 +33,7 @@ pipeline{
       }
       stage('SignPath Async'){
           steps{
+              script {
               signingRequestId = submitSigningRequest(apiUrl: "http://localhost:44328/", 
                                                       ciUserToken: "AH/I3MoDI8pBUd5rJbWst9VsPoh05OQ5pxQE2ZHEzQoY", 
                                                       organizationId: "5278a79c-5e5d-440d-994a-1d7901849ea7",
@@ -44,6 +45,7 @@ pipeline{
                                                       serviceUnavailableTimeoutInSeconds: 20,
                                                       uploadAndDownloadRequestTimeoutInSeconds: 20,
                                                       waitForCompletionTimeoutInSeconds: 20)
+             }
           }
       }
       stage('Download Signed Artifact'){
