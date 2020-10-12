@@ -41,9 +41,9 @@ pipeline{
                                    inputArtifactPath: "Calculator\\bin\\Release\\netcoreapp3.1\\publish\\Calculator.exe",
                                    outputArtifactPath: "Calculator.signed.exe",
                                    waitForCompletion: true,
-                                   serviceUnavailableTimeoutInSeconds: 10,
-                                   uploadAndDownloadRequestTimeoutInSeconds: 10,
-                                   waitForCompletionTimeoutInSeconds:10)
+                                   serviceUnavailableTimeoutInSeconds: 20,
+                                   uploadAndDownloadRequestTimeoutInSeconds: 20,
+                                   waitForCompletionTimeoutInSeconds: 20)
           }
       }
     }
