@@ -34,7 +34,7 @@ pipeline{
       stage('SignPath'){
           steps{
               submitSigningRequest(apiUrl: "http://localhost:44328/", 
-                                   ciUserToken: "AJb2OOqIwTZEUFv6b1me2S6wH1VV2jOpSynz3cQ5RU/r", 
+                                   ciUserToken: "AH/I3MoDI8pBUd5rJbWst9VsPoh05OQ5pxQE2ZHEzQoY", 
                                    organizationId: "5278a79c-5e5d-440d-994a-1d7901849ea7",
                                    projectSlug: "SomeProject",
                                    signingPolicySlug: "TestSigning",
