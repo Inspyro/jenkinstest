@@ -36,7 +36,7 @@ pipeline{
           steps{
               script {
               signingRequestId = submitSigningRequest(apiUrl: "https://sp-dev-web.dev.rubicon-it.com/SignPath.Application_green-rev1/Api", 
-                                                      ciUserToken: "AE2QRWQrEd9fk//lZsmB0/J4B5fu3O6FFf2e2wa0W7/2", 
+                                                      ciUserToken: "AB2etCntzCMqpzsL4jhtwD466c7KBzr7opkx/810yXdq", 
                                                       organizationId: "680cf22e-f36d-4bbe-8bd0-8a722be51b90",
                                                       projectSlug: "CalculatorProject",
                                                       signingPolicySlug: "TestSigning",
