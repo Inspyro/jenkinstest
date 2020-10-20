@@ -55,9 +55,9 @@ pipeline{
             message "Should we download the signing request ${signingRequestId}?"
         }
         steps{
-             getSignedArtifact(apiUrl: "http://localhost:44328/", 
-                               ciUserToken: "AH/I3MoDI8pBUd5rJbWst9VsPoh05OQ5pxQE2ZHEzQoY", 
-                               organizationId: "5278a79c-5e5d-440d-994a-1d7901849ea7",
+             getSignedArtifact(apiUrl: "https://sp-dev-web.dev.rubicon-it.com/SignPath.Application_green-rev1/Api", 
+                               ciUserToken: "AB2etCntzCMqpzsL4jhtwD466c7KBzr7opkx/810yXdq", 
+                               organizationId: "680cf22e-f36d-4bbe-8bd0-8a722be51b90",
                                signingRequestId: "${signingRequestId}",
                                outputArtifactPath: "Calculator.signed.exe",
                                serviceUnavailableTimeoutInSeconds: 20,
