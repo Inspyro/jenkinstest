@@ -39,7 +39,7 @@ pipeline{
                                                       ciUserToken: "AB2etCntzCMqpzsL4jhtwD466c7KBzr7opkx/810yXdq", 
                                                       organizationId: "680cf22e-f36d-4bbe-8bd0-8a722be51b90",
                                                       projectSlug: "CalculatorProject",
-                                                      signingPolicySlug: "TestSigning",
+                                                      signingPolicySlug: "ReleaseSigning",
                                                       inputArtifactPath: "Calculator\\bin\\Release\\netcoreapp3.1\\publish\\Calculator.exe",
                                                       outputArtifactPath: "Calculator.signed.exe",
                                                       waitForCompletion: false,
