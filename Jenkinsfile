@@ -33,10 +33,10 @@ pipeline{
       }
       stage('SignPath'){
           steps{
-              submitSigningRequest(apiUrl: "http://localhost:44328/", 
-                                   ciUserToken: "AH/I3MoDI8pBUd5rJbWst9VsPoh05OQ5pxQE2ZHEzQoY", 
-                                   organizationId: "5278a79c-5e5d-440d-994a-1d7901849ea7",
-                                   projectSlug: "SomeProject",
+              submitSigningRequest(apiUrl: "https://sp-dev-web.dev.rubicon-it.com/SignPath.Application_green-rev1/Api", 
+                                   ciUserToken: "AE2QRWQrEd9fk//lZsmB0/J4B5fu3O6FFf2e2wa0W7/2", 
+                                   organizationId: "680cf22e-f36d-4bbe-8bd0-8a722be51b90",
+                                   projectSlug: "CalculatorProject",
                                    signingPolicySlug: "TestSigning",
                                    inputArtifactPath: "Calculator\\bin\\Release\\netcoreapp3.1\\publish\\Calculator.exe",
                                    outputArtifactPath: "Calculator.signed.exe",
